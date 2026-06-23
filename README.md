@@ -32,7 +32,7 @@ Após a validação dos conceitos localmente, a infraestrutura será provisionad
 - [x] Docker instalado
 - [x] Estrutura inicial do projeto criada
 - [x] Arquivo .gitignore criado
-- [ ] LocalStack iniciado
+- [x] LocalStack iniciado
 - [ ] Terraform configurado
 - [ ] AWS CLI configurada
 
