@@ -1,30 +1,55 @@
 # Terraform AWS Challenge
 
+**Autor:** Victor Lessa
+
 ## Sobre o Projeto
 
-Este projeto tem como objetivo desenvolver uma infraestrutura completa utilizando Terraform seguindo os princípios de Infrastructure as Code (IaC).
+Este projeto faz parte da formação **Cloud Computing e Infraestrutura Inteligente**, promovida pela **Oxetech**, iniciativa do Governo de Alagoas voltada à capacitação e profissionalização de talentos na área de tecnologia.
 
-O desenvolvimento está sendo realizado de forma incremental, iniciando pela preparação do ambiente local, utilização de Git para versionamento, Docker para containers e LocalStack para simulação de serviços AWS.
+O objetivo é desenvolver uma infraestrutura completa na AWS utilizando Terraform, aplicando os conceitos de Infrastructure as Code (IaC), automação, versionamento e boas práticas de provisionamento em nuvem.
 
-Após a validação dos conceitos localmente, a infraestrutura será provisionada na AWS.
+Durante o desenvolvimento serão implementados recursos como:
 
-## Status Atual
+- VPC
+- Subnets públicas e privadas
+- Internet Gateway
+- Security Groups
+- Instâncias EC2
+- Banco de dados PostgreSQL (RDS)
+- Buckets S3
+- Tabelas DynamoDB
+- Funções Lambda
+- API Gateway
+- IAM Roles e Policies
 
-Módulo atual: Preparação do Ambiente
+Além da construção da infraestrutura, o projeto também documenta o processo de aprendizado, as decisões técnicas e os desafios encontrados ao longo da jornada.
+
+Toda a infraestrutura será provisionada na AWS utilizando Terraform como ferramenta principal de automação.
 
 ---
 
-Progresso:
+## Formação
+
+- Programa: Oxetech
+- Instituição: Governo de Alagoas
+- Trilha: Cloud Computing e Infraestrutura Inteligente
+- Tecnologias principais: AWS, Azure, GCP, Terraform, Docker, Git e Linux
+
+---
+
+## Status Atual
+
+Módulo atual: Conclusão do Módulo 1 - Preparação do Ambiente
+
+Situação atual:
+
 - Ambiente Linux configurado
 - Git e GitHub configurados
-- Docker instalado
-- LocalStack operacional
+- Docker instalado e validado
+- LocalStack Community operacional
 - Terraform instalado
-- Documentação em andamento
-
-Próximo passo:
-- Finalizar configuração da AWS CLI
-- Iniciar integração Terraform + LocalStack
+- AWS CLI configurada
+- Documentação do projeto em andamento
 
 ---
 
@@ -88,13 +113,12 @@ terraform-aws-desafio/
 
 ## Próximos Passos
 
-- Inicializar LocalStack
-- Validar ambiente Terraform
-- Configurar AWS CLI
-- Iniciar desenvolvimento da infraestrutura
+- Iniciar Módulo 2
+- Configurar provider AWS no Terraform
+- Criar a VPC do projeto
+- Criar subnets públicas e privadas
+- Estruturar os arquivos Terraform da infraestrutura
 
 ---
 
-## Autor
 
-Victor Lucas
