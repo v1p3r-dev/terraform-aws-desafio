@@ -8,6 +8,24 @@ O desenvolvimento está sendo realizado de forma incremental, iniciando pela pre
 
 Após a validação dos conceitos localmente, a infraestrutura será provisionada na AWS.
 
+## Status Atual
+
+Módulo atual: Preparação do Ambiente
+
+---
+
+Progresso:
+- Ambiente Linux configurado
+- Git e GitHub configurados
+- Docker instalado
+- LocalStack operacional
+- Terraform instalado
+- Documentação em andamento
+
+Próximo passo:
+- Finalizar configuração da AWS CLI
+- Iniciar integração Terraform + LocalStack
+
 ---
 
 ## Objetivos de Aprendizado
@@ -29,12 +47,15 @@ Após a validação dos conceitos localmente, a infraestrutura será provisionad
 - [x] Git instalado
 - [x] Repositório Git criado
 - [x] Repositório GitHub criado
+- [x] Personal Access Token configurado
+- [x] Push para GitHub realizado
 - [x] Docker instalado
 - [x] Estrutura inicial do projeto criada
 - [x] Arquivo .gitignore criado
 - [x] LocalStack iniciado
-- [ ] Terraform configurado
-- [ ] AWS CLI configurada
+- [x] LocalStack validado via Health Check
+- [x] Terraform configurado
+- [x] AWS CLI configurada
 
 ---
 
