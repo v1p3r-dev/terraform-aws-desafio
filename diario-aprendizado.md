@@ -1,4 +1,14 @@
-# Diário de Aprendizado
+### Etapa 1 - Variáveis
+
+Foi criada a variável aws_region para definir a região AWS utilizada no projeto.
+
+O uso de variáveis permite reutilização de código e facilita futuras alterações de configuração.
+
+### Etapa 2 - Provider AWS
+
+Foi configurado o provider AWS, responsável pela comunicação entre o Terraform e a conta AWS.
+
+Também foi definida a versão mínima do Terraform e a versão do provider AWS utilizada pelo projeto.# Diário de Aprendizado
 
 ## Objetivo
 
@@ -52,7 +62,17 @@ Documentar minha evolução durante o desenvolvimento do projeto Terraform AWS C
 ### Etapa 14
 - Criação do repositório remoto no GitHub.
 - Configuração do remote origin.
+### Etapa 1 - Variáveis
 
+Foi criada a variável aws_region para definir a região AWS utilizada no projeto.
+
+O uso de variáveis permite reutilização de código e facilita futuras alterações de configuração.
+
+### Etapa 2 - Provider AWS
+
+Foi configurado o provider AWS, responsável pela comunicação entre o Terraform e a conta AWS.
+
+Também foi definida a versão mínima do Terraform e a versão do provider AWS utilizada pelo projeto.
 ### Etapa 15
 - Verificação dos containers Docker utilizando docker ps -a.
 - Identificação de que não existem containers ativos ou cadastrados no ambiente.
@@ -69,9 +89,17 @@ Documentar minha evolução durante o desenvolvimento do projeto Terraform AWS C
 - Validação dos logs do serviço.
 - Confirmação da mensagem "Ready." indicando ambiente operacional.
 
-#### Aprendizado Técnico
+#### Aprendizado Técnico### Etapa 1 - Variáveis
 
-Durante a inicialização do LocalStack foi identificado um problema relacionado à imagem `localstack-pro`, que exigia licença.
+Foi criada a variável aws_region para definir a região AWS utilizada no projeto.
+O uso de variáveis permite reutilização de código e facilita futuras alterações de configuração.
+
+### Etapa 2 - Provider AWS
+
+Foi configurado o provider AWS, responsável pela comunicação entre o Terraform e a conta AWS.
+Também foi definida a versão mínima do Terraform e a versão do provider AWS utilizada pelo projeto.### Etapa 1 - Variáveis
+Foi criada a variável aws_region para definir a região AWS utilizada no projeto.
+O uso de variáveis permite reutilização de código e facilita futuras alterações de configuração.
 
 Foi necessário:
 
@@ -132,3 +160,88 @@ Durante este módulo aprendi:
 - Conceitos iniciais de Docker.
 - Diferenças entre AWS real e LocalStack.
 - Organização de documentação técnica.
+
+## Módulo 2 - Criando o Projeto Terraform
+
+### Como o Terraform funciona
+
+Aprendi que o Terraform lê automaticamente todos os arquivos com extensão `.tf` presentes no diretório do projeto.
+
+Isso permite organizar a infraestrutura em vários arquivos sem alterar o funcionamento da aplicação.
+
+Exemplo:
+
+- provider.tf → configuração do provider AWS
+- variables.tf → definição de variáveis
+- main.tf → recursos principais
+- outputs.tf → saídas do projeto
+
+Durante a execução, o Terraform interpreta todos esses arquivos como um único projeto.
+
+### Etapa 1 - Variáveis
+
+Foi criada a variável aws_region para definir a região AWS utilizada no projeto.
+
+O uso de variáveis permite reutilização de código e facilita futuras alterações de configuração.
+
+### Etapa 2 - Provider AWS
+
+Foi configurado o provider AWS, responsável pela comunicação entre o Terraform e a conta AWS.
+
+Também foi definida a versão mínima do Terraform e a versão do provider AWS utilizada pelo projeto.
+
+### Etapa 3 - Inicialização do Terraform
+
+Foi executado o comando `terraform init`, responsável por preparar o ambiente de trabalho do Terraform.
+
+Durante essa etapa foram realizados:
+
+- Download do provider AWS oficial da HashiCorp.
+- Criação da pasta `.terraform`.
+- Geração do arquivo `.terraform.lock.hcl`.
+- Inicialização do projeto para futuras operações de provisionamento.
+
+A inicialização foi concluída com sucesso, deixando o ambiente pronto para validação e planejamento da infraestrutura.
+
+### Etapa 4 - Validação da Configuração
+
+Foi executado o comando `terraform validate` para verificar a sintaxe e a consistência dos arquivos Terraform.
+
+A validação foi concluída com sucesso, confirmando que a configuração do projeto está correta.
+
+### Etapa 5 - Planejamento da Infraestrutura
+
+Foi executado o comando `terraform plan`.
+
+Como ainda não existem recursos definidos, o Terraform informou que não há alterações a serem aplicadas na infraestrutura.
+
+---
+
+#### Aprendizado Técnico
+
+O comando `terraform plan` compara a configuração do projeto com o estado atual da infraestrutura e apresenta as alterações que serão realizadas antes da execução do `terraform apply`.
+
+Esse comando é uma etapa importante para validar mudanças antes de provisionar recursos na AWS.
+
+O comando `terraform init` deve ser executado sempre que um projeto Terraform é criado ou quando houver alteração de providers ou módulos.
+
+Esse comando prepara o ambiente local antes da execução dos demais comandos do Terraform.
+
+## Observações
+
+Durante este módulo aprendi:
+
+- Como o Terraform organiza os arquivos `.tf`.
+- Como utilizar variáveis para tornar a infraestrutura reutilizável.
+- Como configurar um provider.
+- Como inicializar um projeto Terraform.
+
+## Módulo 3 — Infraestrutura de Rede
+
+### Objetivo
+
+Neste módulo será criada toda a infraestrutura de rede da AWS, que servirá como base para os demais recursos do projeto.
+
+A rede será composta por uma VPC, sub-redes públicas e privadas, Internet Gateway e tabelas de roteamento.
+
+Essa organização segue boas práticas utilizadas em ambientes reais de produção.
