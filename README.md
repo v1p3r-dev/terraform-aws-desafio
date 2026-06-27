@@ -79,23 +79,59 @@ Situação atual:
 - [x] Arquivo .gitignore criado
 - [x] LocalStack iniciado
 - [x] LocalStack validado via Health Check
-- [x] Terraform configurado
+- [x] Terraform instalado
 - [x] AWS CLI configurada
+
+---
+
+### Módulo 2 - Configuração do Terraform
+
+- [x] Provider AWS configurado
+- [x] Variáveis do projeto criadas
+- [x] Data Source das Availability Zones configurado
+- [x] Estrutura inicial dos arquivos Terraform criada
+
+---
+
+### Módulo 3 - Infraestrutura de Rede
+
+- [x] VPC criada
+- [x] Duas Subnets Públicas
+- [x] Duas Subnets Privadas
+- [x] Internet Gateway
+- [x] Elastic IP para NAT Gateway
+- [ ] NAT Gateway
+- [ ] Route Tables
+- [ ] Associações das Route Tables
 
 ---
 
 ## Estrutura Atual
 
-```text
+```
 terraform-aws-desafio/
-├── .gitignore
-├── README.md
-├── diario-aprendizado.md
-├── main.tf
+
+├── alb.tf
+├── api.tf
+├── asg.tf
+├── dynamodb.tf
+├── ec2.tf
+├── iam.tf
+├── lambda.tf
+├── nat.tf
 ├── provider.tf
+├── rds.tf
+├── route.tf
+├── s3.tf
+├── security.tf
+├── subnet.tf
+├── vpc.tf
 ├── variables.tf
 ├── outputs.tf
-└── terraform.tfvars.example
+├── terraform.tfvars.example
+├── README.md
+├── diario-aprendizado.md
+└── .gitignore
 ```
 
 ---
@@ -113,11 +149,12 @@ terraform-aws-desafio/
 
 ## Próximos Passos
 
-- Iniciar Módulo 2
-- Configurar provider AWS no Terraform
-- Criar a VPC do projeto
-- Criar subnets públicas e privadas
-- Estruturar os arquivos Terraform da infraestrutura
+- Criar NAT Gateway
+- Configurar Route Tables
+- Associar as Route Tables às Subnets
+- Validar toda a infraestrutura de rede
+- Provisionar a infraestrutura no LocalStack
+- Preparar o deploy em uma conta AWS real
 
 ---
 
