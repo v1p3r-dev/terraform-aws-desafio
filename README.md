@@ -100,9 +100,9 @@ Situação atual:
 - [x] Duas Subnets Privadas
 - [x] Internet Gateway
 - [x] Elastic IP para NAT Gateway
-- [ ] NAT Gateway
-- [ ] Route Tables
-- [ ] Associações das Route Tables
+- [x] NAT Gateway
+- [x] Route Tables
+- [x] Associações das Route Tables
 
 ---
 

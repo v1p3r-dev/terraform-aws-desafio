@@ -277,48 +277,43 @@ depends_on
 ```
 
 para garantir que o Internet Gateway seja criado antes do Elastic IP.
+---
+
+## Tabelas de Roteamento
+
+Foram criadas duas tabelas de rotas:
+
+- Tabela pública;
+- Tabela privada.
+
+Na tabela pública foi adicionada uma rota padrão apontando para o Internet Gateway.
+
+Na tabela privada foi adicionada uma rota padrão apontando para o NAT Gateway.
 
 ### Aprendizado
 
-Entendi que o Terraform normalmente identifica dependências automaticamente, mas em alguns cenários é necessário defini-las manualmente.
+Compreendi que criar uma Route Table não significa que ela já possui rotas configuradas.
+
+Foi necessário criar explicitamente as rotas utilizando o recurso `aws_route`.
 
 ---
 
-## Versionamento
+## Associação das Sub-redes
 
-Após concluir a criação da infraestrutura de rede, realizei o versionamento do projeto utilizando Git.
+As sub-redes públicas foram associadas à tabela pública.
 
-Fluxo executado:
-
-```bash
-git status
-git add .
-git commit -m "feat(network): adiciona VPC, subnets, IGW, Elastic IP e NAT Gateway"
-git push origin main
-```
+As sub-redes privadas foram associadas à tabela privada.
 
 ### Aprendizado
+
+Aprendi que as tabelas de roteamento só entram em funcionamento depois que são associadas às sub-redes.
+
+Sem essa associação, a subnet continua utilizando a tabela principal da VPC.
+
+Entendi que o Terraform normalmente identifica dependências automaticamente, mas em alguns cenários é necessário defini-las manualmente.
 
 Passei a compreender a importância de registrar pequenas evoluções do projeto por meio de commits descritivos.
 
 Isso facilita tanto a organização quanto a consulta ao histórico de desenvolvimento.
 
 ---
-
-# Conhecimentos adquiridos até o momento
-
-Ao concluir esta etapa do projeto, consegui compreender melhor:
-
-- Estrutura de um projeto Terraform;
-- Organização dos arquivos `.tf`;
-- Uso de variáveis;
-- Configuração de providers;
-- Funcionamento do `terraform init`;
-- Diferença entre `validate`, `plan` e `apply`;
-- Estrutura de uma VPC;
-- Diferença entre sub-redes públicas e privadas;
-- Internet Gateway;
-- Elastic IP;
-- NAT Gateway;
-- Dependências entre recursos (`depends_on`);
-- Organização de commits utilizando Git.
