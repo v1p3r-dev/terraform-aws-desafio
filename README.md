@@ -39,17 +39,20 @@ Toda a infraestrutura será provisionada na AWS utilizando Terraform como ferram
 
 ## Status Atual
 
-Módulo atual: Conclusão do Módulo 1 - Preparação do Ambiente
+Módulo atual: Módulo 4 — Camada de Computação (EC2)
 
 Situação atual:
 
 - Ambiente Linux configurado
-- Git e GitHub configurados
-- Docker instalado e validado
-- LocalStack Community operacional
-- Terraform instalado
+- Docker e LocalStack configurados
+- Terraform inicializado
 - AWS CLI configurada
-- Documentação do projeto em andamento
+- Estrutura do projeto organizada
+- Infraestrutura de rede concluída
+- Security Group criado
+- EC2 configurada
+- AMI dinâmica utilizando Data Source
+- Key Pair configurado;
 
 ---
 
@@ -106,6 +109,17 @@ Situação atual:
 
 ---
 
+### Módulo 4 - Camada de Computação
+
+- [x] Security Group criado
+- [x] Regras Ingress configuradas
+- [x] Regras Egress configuradas
+- [x] Data Source da AMI criado
+- [x] Variáveis da EC2 configuradas
+- [x] Key Pair configurado
+- [x] Instância EC2 configurada
+
+---
 ## Estrutura Atual
 
 ```
@@ -114,6 +128,7 @@ terraform-aws-desafio/
 ├── alb.tf
 ├── api.tf
 ├── asg.tf
+├── data.tf
 ├── dynamodb.tf
 ├── ec2.tf
 ├── iam.tf
@@ -125,13 +140,14 @@ terraform-aws-desafio/
 ├── s3.tf
 ├── security.tf
 ├── subnet.tf
-├── vpc.tf
 ├── variables.tf
+├── vpc.tf
 ├── outputs.tf
 ├── terraform.tfvars.example
 ├── README.md
 ├── diario-aprendizado.md
 └── .gitignore
+
 ```
 
 ---
@@ -149,12 +165,15 @@ terraform-aws-desafio/
 
 ## Próximos Passos
 
-- Criar NAT Gateway
-- Configurar Route Tables
-- Associar as Route Tables às Subnets
-- Validar toda a infraestrutura de rede
-- Provisionar a infraestrutura no LocalStack
-- Preparar o deploy em uma conta AWS real
+- Criar IAM Roles
+- Configurar IAM Instance Profile
+- Provisionar Bucket S3
+- Criar tabela DynamoDB
+- Provisionar banco PostgreSQL (RDS)
+- Implementar Auto Scaling Group
+- Configurar API Gateway
+- Criar funções Lambda
+- Preparar infraestrutura para deploy em uma conta AWS
 
 ---
 

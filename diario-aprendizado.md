@@ -317,3 +317,121 @@ Passei a compreender a importância de registrar pequenas evoluções do projeto
 Isso facilita tanto a organização quanto a consulta ao histórico de desenvolvimento.
 
 ---
+
+# Módulo 4 — Camada de Computação
+
+## Objetivo
+
+Neste módulo iniciei a camada de computação da infraestrutura, criando os recursos necessários para provisionar a primeira instância EC2 do projeto.
+
+Além da configuração da instância, também foram implementados os mecanismos responsáveis pelo controle de acesso e pela definição da imagem utilizada no provisionamento.
+
+---
+
+## Security Group
+
+Foi criado um Security Group específico para a instância EC2.
+
+As configurações realizadas foram:
+
+* Associação à VPC criada anteriormente;
+* Regra de entrada permitindo conexões SSH (porta 22);
+* Regra de saída liberando o tráfego para qualquer destino;
+* Tags de identificação seguindo o padrão adotado no projeto.
+
+### Comandos utilizados
+
+Após concluir essa etapa foram executados os comandos:
+
+```bash
+terraform fmt
+terraform validate
+terraform plan
+```
+
+### Aprendizado
+
+Compreendi que o Security Group funciona como um firewall virtual da AWS.
+
+Enquanto as regras de entrada controlam quais conexões podem acessar a instância, as regras de saída definem para quais destinos ela poderá se comunicar.
+
+---
+
+## Data Source da AMI
+
+Foi criado o arquivo:
+
+* `data.tf`
+
+Nesse arquivo foi configurado um Data Source responsável por localizar automaticamente a versão mais recente da imagem Amazon Linux 2023.
+
+Essa abordagem elimina a necessidade de utilizar IDs fixos de AMIs, tornando o projeto mais flexível e reduzindo a necessidade de manutenção futura.
+
+### Comandos utilizados
+
+```bash
+terraform fmt
+terraform validate
+terraform plan
+```
+
+### Aprendizado
+
+Aprendi a diferença entre recursos (`resource`) e fontes de dados (`data`).
+
+Enquanto um recurso cria infraestrutura, um Data Source apenas consulta informações já existentes na AWS para serem utilizadas durante o provisionamento.
+
+---
+
+## Configuração da EC2
+
+Foi criado o arquivo:
+
+* `ec2.tf`
+
+A instância EC2 foi configurada utilizando:
+
+* AMI obtida por meio do Data Source;
+* Tipo da instância definido por variável;
+* Sub-rede pública;
+* Security Group criado anteriormente;
+* Endereço IP público;
+* Tags de identificação.
+
+Também foi configurado um Key Pair para permitir o acesso remoto via SSH.
+
+### Comandos utilizados
+
+```bash
+terraform fmt
+terraform validate
+terraform plan
+```
+
+Ao final da configuração, o Terraform apresentou:
+
+```text
+Plan: 19 to add, 0 to change, 0 to destroy.
+```
+
+confirmando que todos os recursos estavam corretamente definidos.
+
+### Aprendizado
+
+Durante essa etapa compreendi que a criação de uma instância EC2 depende diretamente da infraestrutura construída nos módulos anteriores.
+
+A EC2 utiliza referências para recursos como VPC, sub-redes, Security Group e Key Pair, demonstrando como o Terraform estabelece automaticamente as dependências entre os componentes da infraestrutura.
+
+---
+
+## Conclusão
+
+Ao concluir este módulo passei a compreender melhor:
+
+* funcionamento dos Security Groups;
+* diferença entre regras Ingress e Egress;
+* utilização de Data Sources;
+* busca dinâmica de AMIs;
+* configuração de Key Pairs;
+* provisionamento de instâncias EC2;
+* dependências entre recursos Terraform.
