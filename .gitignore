@@ -16,3 +16,10 @@ crash.log
 
 # Sistema
 .DS_Store
+
+# Chaves SSH criadas por engano no diretório do projeto
+luk
+luk.pub
+
+# Chaves privadas
+*.pem

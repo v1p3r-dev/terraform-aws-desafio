@@ -39,3 +39,15 @@ variable "private_subnet_2_cidr" {
   type        = string
   default     = "10.0.20.0/24"
 }
+
+variable "instance_type" {
+  description = "Tipo da instancia EC2"
+  type        = string
+  default     = "t2.micro"
+}
+
+variable "public_key_path" {
+  description = "Caminho da chave publica SSH"
+  type        = string
+  default     = "/home/viper/.ssh/id_ed25519.pub"
+}
