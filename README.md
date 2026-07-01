@@ -39,20 +39,26 @@ Toda a infraestrutura será provisionada na AWS utilizando Terraform como ferram
 
 ## Status Atual
 
-Módulo atual: Módulo 4 — Camada de Computação (EC2)
+Módulo atual: Conclusão do Projeto
 
 Situação atual:
 
-- Ambiente Linux configurado
-- Docker e LocalStack configurados
-- Terraform inicializado
-- AWS CLI configurada
-- Estrutura do projeto organizada
-- Infraestrutura de rede concluída
-- Security Group criado
-- EC2 configurada
-- AMI dinâmica utilizando Data Source
-- Key Pair configurado;
+- Infraestrutura de rede totalmente provisionada
+- Security Groups separados por camada
+- EC2 pública criada com User Data
+- IAM Roles, Policies e Instance Profile configurados
+- Bucket S3 com criptografia e versionamento
+- DynamoDB com GSI e Point-in-Time Recovery
+- Função AWS Lambda criada
+- API Gateway integrado à Lambda
+- Auto Scaling Group configurado
+- Launch Template criado
+- Application Load Balancer (ALB) configurado
+- Target Group e Listener configurados
+- Banco PostgreSQL (RDS) configurado
+- Outputs Terraform adicionados
+- Provisionamento validado utilizando AWS real
+
 
 ---
 
@@ -120,6 +126,78 @@ Situação atual:
 - [x] Instância EC2 configurada
 
 ---
+
+### Módulo 5 - Armazenamento (Amazon S3)
+
+- [x] Bucket S3 criado
+- [x] Versionamento habilitado
+- [x] Criptografia padrão configurada
+- [x] Bloqueio de acesso público configurado
+
+---
+
+### Módulo 6 - Banco de Dados NoSQL
+
+- [x] Tabela DynamoDB criada
+- [x] Chave primária configurada
+- [x] Billing Mode configurado
+- [x] Tags adicionadas
+
+---
+
+### Módulo 7 - Gerenciamento de Identidade (IAM)
+
+- [x] IAM Role criada para EC2
+- [x] IAM Policy criada
+- [x] Permissões para acesso ao S3 configuradas
+- [x] Policy anexada à Role
+- [x] Instance Profile criado
+- [x] EC2 associada ao Instance Profile
+
+---
+
+### Módulo 8 - Banco de Dados Relacional (Amazon RDS)
+
+- [x] DB Subnet Group criado
+- [x] PostgreSQL configurado
+- [x] Security Group exclusivo para RDS
+- [x] Banco privado utilizando subnets privadas
+- [x] Outputs do banco adicionados
+
+---
+
+### Módulo 9 - Serverless
+
+- [x] Função Lambda criada
+- [x] IAM Role da Lambda
+- [x] IAM Policy da Lambda
+- [x] Código empacotado em ZIP
+- [x] Integração com API Gateway
+
+---
+
+### Módulo 10 - API Gateway
+
+- [x] HTTP API criada
+- [x] Integração AWS_PROXY
+- [x] Stage automático
+- [x] Permissão de Invoke para Lambda
+
+---
+
+### Módulo 11 - Alta Disponibilidade
+
+- [x] Launch Template criado
+- [x] Auto Scaling Group criado
+- [x] Política de Auto Scaling por CPU
+- [x] Application Load Balancer criado
+- [x] Listener HTTP criado
+- [x] Target Group configurado
+
+---
+
+
+---
 ## Estrutura Atual
 
 ```
@@ -146,7 +224,10 @@ terraform-aws-desafio/
 ├── terraform.tfvars.example
 ├── README.md
 ├── diario-aprendizado.md
-└── .gitignore
+├── autoscaling_policy.tf
+├── lambda/
+│   └── lambda_function.py
+├── lambda.zip└── .gitignore
 
 ```
 
@@ -155,26 +236,42 @@ terraform-aws-desafio/
 ## Ferramentas Utilizadas
 
 - Terraform
+- AWS CLI
 - Git
 - GitHub
 - Docker
 - LocalStack
-- AWS CLI
+- Linux
+- Visual Studio Code
 
 ---
 
 ## Próximos Passos
 
-- Criar IAM Roles
-- Configurar IAM Instance Profile
-- Provisionar Bucket S3
-- Criar tabela DynamoDB
-- Provisionar banco PostgreSQL (RDS)
-- Implementar Auto Scaling Group
-- Configurar API Gateway
-- Criar funções Lambda
-- Preparar infraestrutura para deploy em uma conta AWS
+- Corrigir warnings de depreciação do DynamoDB
+- Ajustar versões do PostgreSQL conforme disponibilidade da região
+- Implementar monitoramento com CloudWatch
+- Automatizar deploy utilizando GitHub Actions
+- Configurar Remote Backend do Terraform
+- Aprimorar documentação técnica
 
 ---
 
+## Conhecimentos Adquiridos
 
+Durante o desenvolvimento deste projeto foram praticados conceitos de:
+
+- Infrastructure as Code (IaC)
+- Provisionamento automatizado na AWS
+- Terraform Modules e organização de arquivos
+- Redes (VPC, Subnets, NAT Gateway e Internet Gateway)
+- Segurança utilizando Security Groups
+- IAM Roles, Policies e Instance Profiles
+- Auto Scaling
+- Load Balancer
+- Banco de dados relacional (RDS)
+- Banco NoSQL (DynamoDB)
+- Serverless com AWS Lambda
+- API Gateway
+- Versionamento com Git e GitHub
+- Organização de projetos Terraform em ambiente real
